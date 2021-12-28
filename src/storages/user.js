@@ -6,7 +6,7 @@ const user = storageKeyConfig({
     email: 'guest@email.com'
   },
 
-  version: 3,
+  version: 2,
 
   // assume version 1, has no default email
   migration: (currentValue, defaultValue) => {
