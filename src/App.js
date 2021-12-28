@@ -1,12 +1,12 @@
-import { useLocalStorage } from '@webcored/react-local-storage';
-import logo from './logo.png';
-import './App.css';
+import { useLocalStorage } from "@webcored/react-local-storage";
+import logo from "./logo.png";
+import "./App.css";
 
 // storage config
-import './storage'
+import "./storage";
 
 function App() {
-  const [user, userDispatch] = useLocalStorage('user');
+  const [user, userDispatch] = useLocalStorage("user");
 
   return (
     <div className="App">
@@ -14,18 +14,20 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <br />
 
-        <div className='storage'>
+        <div className="storage">
           <small>Available value for storage key: user</small>
-          <pre>
-            {JSON.stringify(user)}
-          </pre>
+          <pre>{JSON.stringify(user)}</pre>
         </div>
 
-         <br />
+        <br />
 
-        <div className='flex'>
+        <div className="flex">
           {/* update name */}
-          <button onClick={() => userDispatch.update({ ...user, name: 'Tony Stark' })}>Update</button>
+          <button
+            onClick={() => userDispatch.update({ ...user, name: "Tony Stark" })}
+          >
+            Update
+          </button>
 
           {/* reset to default */}
           <button onClick={() => userDispatch.reset()}>Reset</button>
@@ -33,7 +35,6 @@ function App() {
           {/* remove from the storage */}
           <button onClick={() => userDispatch.remove()}>Remove</button>
         </div>
-
       </header>
     </div>
   );
